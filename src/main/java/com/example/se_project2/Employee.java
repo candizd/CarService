@@ -12,7 +12,6 @@ public class Employee {
     protected String adresse;
     protected String abteilung;
     protected String email;
-    private ArrayList<Employee> employees = new ArrayList();
 
     public Employee(String passwort, String name, String nachname, String telefonnummer, String employee_ID, String bankkonto, String adresse, String abteilung, String email) {
         this.passwort = passwort;
@@ -30,7 +29,5 @@ public class Employee {
         return this.employee_ID;
     }
 
-    public void addNewEmployee(Employee e) {
-        this.employees.add(e);
-    }
+
 }
