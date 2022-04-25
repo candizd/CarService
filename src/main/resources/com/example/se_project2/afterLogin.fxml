@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.Icon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="872.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se_project2.AfterLogin">
+   <left>
+      <VBox prefHeight="631.0" prefWidth="214.0" style="-fx-background-color: #008080;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Service" textAlignment="CENTER" wrappingWidth="256.2890625">
+               <font>
+                  <Font name="Book Antiqua Bold" size="35.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Text>
+            <HBox prefHeight="76.0" prefWidth="214.0" style="-fx-background-color: #047270;">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <Icon content="SEARCH" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="40.0">
+                     <effect>
+                        <ColorAdjust brightness="1.0" contrast="0.98" />
+                     </effect>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Icon>
+                  <TextField promptText="search anything" style="-fx-background-color: transparent; -fx-prompt-text-fill: white;" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="77.0" prefWidth="256.0" style="-fx-background-color: #047270;">
+               <children>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minWidth="34.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="54.0" style="-fx-background-color: #008080; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
+                     <graphic>
+                        <ImageView fitHeight="57.0" fitWidth="54.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../../../../../../../OneDrive/Desktop/JAVAFX/employee.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-fill: white;" text="Employee" wrappingWidth="166.6337890625">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="77.0" prefWidth="241.0" style="-fx-background-color: #047270;">
+               <children>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minWidth="34.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="54.0" style="-fx-background-color: #008080; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
+                     <graphic>
+                        <ImageView fitHeight="72.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                           <viewport>
+                              <Rectangle2D />
+                           </viewport>
+                           <image>
+                              <Image url="@../../../../../../../../OneDrive/Desktop/JAVAFX/customer.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-fill: white;" text="Customer" wrappingWidth="166.6337890625">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="77.0" prefWidth="241.0" style="-fx-background-color: #047270;">
+               <children>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minWidth="34.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="54.0" style="-fx-background-color: #008080; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
+                     <graphic>
+                        <ImageView fitHeight="62.0" fitWidth="53.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../../../../../../../OneDrive/Desktop/JAVAFX/cars.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-fill: white;" text="Cars" wrappingWidth="166.6337890625">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="77.0" prefWidth="241.0" style="-fx-background-color: #047270;">
+               <children>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minWidth="34.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="54.0" style="-fx-background-color: #008080; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
+                     <graphic>
+                        <ImageView fitHeight="72.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../../OneDrive/Desktop/JAVAFX/bilss.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-fill: white;" text="Bills" wrappingWidth="166.6337890625">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="77.0" prefWidth="241.0" style="-fx-background-color: #047270;">
+               <children>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minWidth="34.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="54.0" style="-fx-background-color: #008080; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
+                     <graphic>
+                        <ImageView fitHeight="72.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../../OneDrive/Desktop/JAVAFX/setting.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-fill: white;" text="Settings" wrappingWidth="166.6337890625">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="568.0" prefWidth="618.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="101.0" prefWidth="615.0" style="-fx-background-color: #f2ffff;">
+               <children>
+                  <Text fill="#0fb0c9" strokeType="OUTSIDE" strokeWidth="0.0" text="Activity">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fill="#656262" strokeType="OUTSIDE" strokeWidth="0.0" text="User">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #dfdeed;">
+               <children>
+                  <TextField prefHeight="70.0" prefWidth="443.0" promptText="Share Knowledge" style="-fx-background-color: transparent; -fx-font-size: 22;">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </TextField>
+                  <Button mnemonicParsing="false" prefHeight="53.0" prefWidth="84.0" text="Post">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <VBox prefWidth="653.0" style="-fx-background-color: #f3f2f7;" VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox>
+                     <children>
+                        <HBox prefHeight="130.0" prefWidth="272.0" style="-fx-background-color: white;">
+                           <children>
+                              <StackPane>
+                                 <children>
+                                    <Circle fill="#1f93ff00" radius="50.0" stroke="#10c4f9" strokeLineCap="BUTT" strokeType="INSIDE" style="-fx-stroke-dash-array: 120;" />
+                                    <Text fill="#0fc7fb" strokeType="OUTSIDE" strokeWidth="0.0" style="fx-font-size: 20px;" text="\%75">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </StackPane>
+                              <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-fill: #9a9a9e;" text="Cars in service">
+                                       <VBox.margin>
+                                          <Insets left="5.0" top="15.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #9a9a9e;" text="24,732">
+                                       <VBox.margin>
+                                          <Insets left="5.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #9a9a9e;" text="/ 29,345">
+                                       <VBox.margin>
+                                          <Insets left="5.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </HBox>
+                        <HBox prefHeight="130.0" prefWidth="272.0" style="-fx-background-color: white;">
+                           <children>
+                              <StackPane>
+                                 <children>
+                                    <Circle fill="#1f93ff00" radius="50.0" rotate="300.0" stroke="#10c4f9" strokeType="INSIDE" style="-fx-stroke-dash-array: 150;" />
+                                    <Text fill="#0fc7fb" strokeType="OUTSIDE" strokeWidth="0.0" style="fx-font-size: 20px;" text="\%65">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </StackPane>
+                              <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-fill: #9a9a9e;" text="Cars Sold">
+                                       <VBox.margin>
+                                          <Insets left="5.0" top="15.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #9a9a9e;" text="10,582">
+                                       <VBox.margin>
+                                          <Insets left="5.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #9a9a9e;" text="/ 16,345">
+                                       <VBox.margin>
+                                          <Insets left="5.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </HBox.margin>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <Button fx:id="logout" mnemonicParsing="false" onAction="#userLogOut" text="Log Out">
+                     <VBox.margin>
+                        <Insets left="270.0" top="100.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
