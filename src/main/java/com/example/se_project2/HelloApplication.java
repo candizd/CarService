@@ -29,6 +29,8 @@ public class HelloApplication extends Application {
 
     }
     public static void main(String[] args) {
+        db db = new db();
+        db.connect();
         launch();
     }
 }

@@ -5,6 +5,7 @@ module com.example.se_project2 {
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
+    requires java.sql;
 
     opens com.example.se_project2 to javafx.fxml;
     exports com.example.se_project2;
