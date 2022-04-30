@@ -30,7 +30,6 @@ public class HelloController {
 
     public void userLogIn(ActionEvent event) throws IOException {
         checkLogin();
-
     }
 
     private void checkLogin() throws IOException {
