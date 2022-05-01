@@ -41,8 +41,8 @@
                </font>
             </Label>
             <Button fx:id="button" layoutX="138.0" layoutY="325.0" mnemonicParsing="false" onAction="#userLogIn" text="Log In" />
-            <TextField fx:id="username" layoutX="142.0" layoutY="188.0" promptText="Username" />
-            <PasswordField fx:id="password" layoutX="142.0" layoutY="245.0" promptText="Password" />
+            <TextField fx:id="tf_username" layoutX="142.0" layoutY="188.0" promptText="Username" />
+            <PasswordField fx:id="tf_password" layoutX="142.0" layoutY="245.0" promptText="Password" />
             <Label fx:id="wrongLogIn" layoutX="139.0" layoutY="150.0" textFill="#f50000" />
          </children>
       </AnchorPane>

@@ -3,9 +3,11 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
@@ -325,7 +327,7 @@
             </VBox>
             <VBox fx:id="employee_screen" prefHeight="200.0" prefWidth="100.0" visible="false">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="118.0" prefWidth="596.0" style="-fx-background-color: #047270;">
+                  <HBox alignment="CENTER_LEFT" prefHeight="124.0" prefWidth="596.0" style="-fx-background-color: #047270;">
                      <children>
                         <Text fx:id="scene_name" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="Employee">
                            <font>
@@ -335,8 +337,54 @@
                               <Insets left="20.0" />
                            </HBox.margin>
                         </Text>
+                        <Button fx:id="adde_button" mnemonicParsing="false" onAction="#changeToAddEmployee" prefHeight="45.0" prefWidth="105.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Add Employee">
+                           <HBox.margin>
+                              <Insets left="200.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="dele_button" mnemonicParsing="false" onAction="#changeToDeleteEmployee" prefHeight="45.0" prefWidth="114.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Delete Employee">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Button>
                      </children>
                   </HBox>
+                  <StackPane prefHeight="506.0" prefWidth="635.0" style="-fx-background-color: #047270;">
+                     <children>
+                        <VBox fx:id="elist_screen" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="635.0" />
+                        <AnchorPane fx:id="adde_screen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="374.0" prefWidth="417.0" style="-fx-background-color: afafaf; -fx-border-color: blue;" visible="false">
+                           <children>
+                              <Label layoutX="50.0" layoutY="80.0" text="Password:" />
+                              <Label layoutX="50.0" layoutY="200.0" text="Email:" />
+                              <Label layoutX="50.0" layoutY="240.0" text="Telephone Number:" />
+                              <Label layoutX="50.0" layoutY="40.0" text="Username:" />
+                              <Label layoutX="51.0" layoutY="280.0" text="Department:" />
+                              <Label layoutX="50.0" layoutY="160.0" text="Surname:" />
+                              <Label layoutX="50.0" layoutY="120.0" text="Name:" />
+                              <TextField fx:id="add_username" layoutX="185.0" layoutY="36.0" style="-fx-background-color: white;" />
+                              <TextField fx:id="add_password" layoutX="185.0" layoutY="76.0" style="-fx-background-color: white;" />
+                              <TextField fx:id="add_name" layoutX="185.0" layoutY="116.0" style="-fx-background-color: white;" />
+                              <TextField fx:id="add_surname" layoutX="185.0" layoutY="158.0" style="-fx-background-color: white;" />
+                              <TextField fx:id="add_email" layoutX="185.0" layoutY="196.0" style="-fx-background-color: white;" />
+                              <TextField fx:id="add_tnumber" layoutX="185.0" layoutY="236.0" style="-fx-background-color: white;" />
+                              <TextField fx:id="add_department" layoutX="185.0" layoutY="276.0" style="-fx-background-color: white;" />
+                              <Button fx:id="esave_button" layoutX="182.0" layoutY="330.0" mnemonicParsing="false" onAction="#addNewEmployee" text="Save" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="dele_screen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="335.0" style="-fx-background-color: afafaf; -fx-border-color: blue;" visible="false">
+                           <children>
+                              <Text layoutX="14.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entered the username of the person:" />
+                              <Label layoutX="14.0" layoutY="109.0" style="-fx-text-fill: blue;" text="Username:">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="del_employee" layoutX="120.0" layoutY="109.0" style="-fx-background-color: white;" />
+                              <Button fx:id="edel_button" layoutX="141.0" layoutY="193.0" mnemonicParsing="false" onAction="#delEmployee" text="delete" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </StackPane>
                </children>
             </VBox>
             <VBox fx:id="customer_screen" prefHeight="200.0" prefWidth="100.0" visible="false">

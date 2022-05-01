@@ -6,7 +6,7 @@ public class db {
     public void connect() {
         try {
             // db parameters
-            String url = "jdbc:sqlite:C:\\Users\\hasan\\IdeaProjects\\SE_Project2\\src\\main\\resources\\com\\example\\se_project2\\carservice.db";
+            String url = "jdbc:sqlite:C:\\Users\\hasan\\IdeaProjects\\SE_Project2 - Copy\\src\\main\\resources\\com\\example\\se_project2\\carservice.db";
             // create a connection to the database
             conn = DriverManager.getConnection(url);
 
@@ -19,5 +19,23 @@ public class db {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public Connection getConnection() {
+        String url = "jdbc:sqlite:C:\\Users\\hasan\\IdeaProjects\\SE_Project2\\src\\main\\resources\\com\\example\\se_project2\\carservice.db";
+        Connection connection = null;
+        try {
+            Class.forName("org.sqlite.JDBC");
+            connection = DriverManager.getConnection(url);
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return connection;
+    }
+    public static db getInstance() {
+        return new db();
     }
 }

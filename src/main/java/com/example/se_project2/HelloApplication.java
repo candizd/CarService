@@ -36,8 +36,7 @@ public class HelloApplication extends Application {
         fakeStg.setHeight(450);
     }
     public static void main(String[] args) {
-        db db = new db();
-        db.connect();
+
         launch();
     }
 }
