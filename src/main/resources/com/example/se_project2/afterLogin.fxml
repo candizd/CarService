@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -16,208 +15,145 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="872.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se_project2.AfterLogin">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se_project2.AfterLogin">
    <left>
-      <VBox prefHeight="631.0" prefWidth="214.0" style="-fx-background-color: #008080;" BorderPane.alignment="CENTER">
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="250.0" style="-fx-background-color: #008080;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="main_button" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#menuButtonClicks" prefHeight="120.0" prefWidth="275.0" style="-fx-font-size: 30; -fx-background-color: #047270; -fx-text-fill: white;" text="Cars Service" VBox.vgrow="ALWAYS">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <font>
-                  <Font size="40.0" />
-               </font>
-            </Button>
-            <HBox prefHeight="77.0" prefWidth="276.0" style="-fx-background-color: #047270;">
-               <padding>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </padding>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="250.0">
                <children>
-                  <TextField promptText="search anything" style="-fx-background-color: transparent; -fx-prompt-text-fill: white;" HBox.hgrow="ALWAYS">
+                  <Button fx:id="main_button" mnemonicParsing="false" onAction="#menuButtonClicks" prefHeight="75.0" prefWidth="250.0" style="-fx-background-color: #047270; -fx-text-fill: white; -fx-font-size: 30;" text="Car Service">
+                     <font>
+                        <Font name="Calibri Light" size="30.0" />
+                     </font>
+                  </Button>
+                  <TextField layoutY="90.0" prefHeight="50.0" prefWidth="250.0" promptText="search anything" style="-fx-background-color: #047270; -fx-prompt-text-fill: white;">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </TextField>
-               </children>
-               <VBox.margin>
-                  <Insets bottom="20.0" top="10.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="77.0" prefWidth="256.0" style="-fx-background-color: #047270;">
-               <children>
-                  <Button fx:id="button_employee" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="34.0" mnemonicParsing="false" onAction="#menuButtonClicks" prefHeight="72.0" prefWidth="54.0" style="-fx-background-color: transparent; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true">
-                           <image>
-                              <Image url="@../../../img/employee.jpg" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-fill: white;" text="Employee" wrappingWidth="166.6337890625">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="15.0" />
-                     </HBox.margin>
-                  </Text>
-               </children>
-               <padding>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets bottom="10.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="77.0" prefWidth="256.0" style="-fx-background-color: #047270;">
-               <children>
-                  <Button fx:id="button_customer" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="42.0" mnemonicParsing="false" onAction="#menuButtonClicks" prefHeight="27.0" prefWidth="42.0" style="-fx-background-color: transparent; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <viewport>
-                              <Rectangle2D />
-                           </viewport>
-                           <image>
-                              <Image url="@../../../img/customer.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
-                     </padding>
-                  </Button>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-fill: white;" text="Customer" wrappingWidth="166.6337890625">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="15.0" />
-                     </HBox.margin>
-                  </Text>
-               </children>
-               <padding>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets bottom="10.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="77.0" prefWidth="256.0" style="-fx-background-color: #047270;">
-               <children>
-                  <Button fx:id="button_cars" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="34.0" mnemonicParsing="false" onAction="#menuButtonClicks" prefHeight="72.0" prefWidth="54.0" style="-fx-background-color: transparent; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true">
-                           <image>
-                              <Image url="@../../../img/cars.jpg" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-fill: white;" text="Cars" wrappingWidth="166.6337890625">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="15.0" />
-                     </HBox.margin>
-                  </Text>
-               </children>
-               <padding>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets bottom="10.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="77.0" prefWidth="256.0" style="-fx-background-color: #047270;">
-               <children>
-                  <Button fx:id="button_bills" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="34.0" mnemonicParsing="false" onAction="#menuButtonClicks" prefHeight="72.0" prefWidth="54.0" style="-fx-background-color: transparent; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../img/bilss.jpg" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-fill: white;" text="Bills" wrappingWidth="166.6337890625">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="15.0" />
-                     </HBox.margin>
-                  </Text>
-               </children>
-               <padding>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets bottom="10.0" />
-               </VBox.margin>
-            </HBox>
-            <VBox prefHeight="200.0" prefWidth="100.0">
-               <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="276.0" style="-fx-background-color: #047270;">
+                  <HBox alignment="CENTER_LEFT" layoutY="160.0" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #047270;">
                      <children>
-                        <Button fx:id="button_settings" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="34.0" mnemonicParsing="false" onAction="#menuButtonClicks" prefHeight="72.0" prefWidth="54.0" style="-fx-background-color: transparent; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
+                        <Button fx:id="button_employee" mnemonicParsing="false" onAction="#menuButtonClicks" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent;">
                            <graphic>
-                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="32.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../img/setting.png" />
+                                    <Image url="@../../../img/employee.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-fill: white;" text="Settings" wrappingWidth="166.6337890625">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-fill: white;" text="Employee" wrappingWidth="146.259765625">
                            <HBox.margin>
-                              <Insets left="15.0" />
+                              <Insets left="30.0" />
                            </HBox.margin>
                         </Text>
                      </children>
-                     <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </padding>
-                     <VBox.margin>
-                        <Insets bottom="10.0" />
-                     </VBox.margin>
                   </HBox>
-               </children></VBox>
+                  <HBox alignment="CENTER_LEFT" layoutY="240.0" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #047270;">
+                     <children>
+                        <Button fx:id="button_customer" mnemonicParsing="false" onAction="#menuButtonClicks" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent;">
+                           <graphic>
+                              <ImageView fitHeight="32.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/customer.jpg" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-fill: white;" text="Customer" wrappingWidth="146.259765625">
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutY="320.0" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #047270;">
+                     <children>
+                        <Button fx:id="button_cars" mnemonicParsing="false" onAction="#menuButtonClicks" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent;">
+                           <graphic>
+                              <ImageView fitHeight="32.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/car.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-fill: white;" text="Cars" wrappingWidth="146.259765625">
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutY="400.0" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #047270;">
+                     <children>
+                        <Button fx:id="button_bills" mnemonicParsing="false" onAction="#menuButtonClicks" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent;">
+                           <graphic>
+                              <ImageView fitHeight="32.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/bill.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-fill: white;" text="Bills" wrappingWidth="146.259765625">
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutY="480.0" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #047270;">
+                     <children>
+                        <Button fx:id="button_settings" mnemonicParsing="false" onAction="#menuButtonClicks" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent;">
+                           <graphic>
+                              <ImageView fitHeight="32.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/settings.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-fill: white;" text="Settings" wrappingWidth="146.259765625">
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
          </children>
       </VBox>
    </left>
    <center>
-      <StackPane fx:id="stackpane" BorderPane.alignment="CENTER">
+      <StackPane fx:id="main_stackpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox fx:id="main_screen" prefHeight="568.0" prefWidth="618.0">
+            <AnchorPane fx:id="main_screen" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="101.0" prefWidth="615.0" style="-fx-background-color: #f2ffff;">
+                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: #f2ffff;">
                      <children>
                         <Text fill="#0fb0c9" strokeType="OUTSIDE" strokeWidth="0.0" text="Activity">
-                           <font>
-                              <Font size="26.0" />
-                           </font>
                            <HBox.margin>
-                              <Insets left="20.0" />
+                              <Insets left="30.0" />
                            </HBox.margin>
+                           <font>
+                              <Font size="28.0" />
+                           </font>
                         </Text>
-                        <Text fill="#656262" strokeType="OUTSIDE" strokeWidth="0.0" text="User">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="User">
+                           <HBox.margin>
+                              <Insets left="15.0" top="10.0" />
+                           </HBox.margin>
                            <font>
                               <Font size="22.0" />
                            </font>
-                           <HBox.margin>
-                              <Insets left="10.0" top="5.0" />
-                           </HBox.margin>
                         </Text>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #dfdeed;">
+                  <HBox alignment="CENTER_LEFT" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: #dfdeed;">
                      <children>
-                        <TextField prefHeight="70.0" prefWidth="443.0" promptText="Share Knowledge" style="-fx-background-color: transparent; -fx-font-size: 22;">
+                        <TextField maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="400.0" promptText="Share Knowledge" style="-fx-background-color: transparent; -fx-font-size: 22;">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -225,232 +161,127 @@
                               <Font size="22.0" />
                            </font>
                         </TextField>
-                        <Button mnemonicParsing="false" prefHeight="53.0" prefWidth="84.0" text="Post">
+                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="75.0" style="-fx-text-fill: white; -fx-background-color: blue;" text="Post">
                            <HBox.margin>
-                              <Insets left="30.0" />
+                              <Insets left="45.0" />
                            </HBox.margin>
                         </Button>
                      </children>
                   </HBox>
-                  <VBox prefWidth="653.0" style="-fx-background-color: #f3f2f7;" VBox.vgrow="ALWAYS">
+                  <HBox layoutY="200.0" prefHeight="200.0" prefWidth="600.0">
                      <children>
-                        <HBox>
+                        <AnchorPane prefHeight="200.0" prefWidth="600.0">
                            <children>
-                              <HBox prefHeight="130.0" prefWidth="272.0" style="-fx-background-color: white;">
-                                 <children>
-                                    <StackPane>
-                                       <children>
-                                          <Circle fill="#1f93ff00" radius="50.0" stroke="#10c4f9" strokeLineCap="BUTT" strokeType="INSIDE" style="-fx-stroke-dash-array: 120;" />
-                                          <Text fill="#0fc7fb" strokeType="OUTSIDE" strokeWidth="0.0" style="fx-font-size: 20px;" text="\%75">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Text>
-                                       </children>
-                                    </StackPane>
-                                    <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
-                                       <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-fill: #9a9a9e;" text="Cars in service">
-                                             <VBox.margin>
-                                                <Insets left="5.0" top="15.0" />
-                                             </VBox.margin>
-                                          </Text>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #9a9a9e;" text="24,732">
-                                             <VBox.margin>
-                                                <Insets left="5.0" />
-                                             </VBox.margin>
-                                          </Text>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #9a9a9e;" text="/ 29,345">
-                                             <VBox.margin>
-                                                <Insets left="5.0" />
-                                             </VBox.margin>
-                                          </Text>
-                                       </children>
-                                    </VBox>
-                                 </children>
-                                 <HBox.margin>
-                                    <Insets left="20.0" top="20.0" />
-                                 </HBox.margin>
-                                 <padding>
-                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                                 </padding>
-                              </HBox>
-                              <HBox prefHeight="130.0" prefWidth="272.0" style="-fx-background-color: white;">
-                                 <children>
-                                    <StackPane>
-                                       <children>
-                                          <Circle fill="#1f93ff00" radius="50.0" rotate="300.0" stroke="#10c4f9" strokeType="INSIDE" style="-fx-stroke-dash-array: 150;" />
-                                          <Text fill="#0fc7fb" strokeType="OUTSIDE" strokeWidth="0.0" style="fx-font-size: 20px;" text="\%65">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Text>
-                                       </children>
-                                    </StackPane>
-                                    <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
-                                       <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-fill: #9a9a9e;" text="Cars Sold">
-                                             <VBox.margin>
-                                                <Insets left="5.0" top="15.0" />
-                                             </VBox.margin>
-                                          </Text>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #9a9a9e;" text="10,582">
-                                             <VBox.margin>
-                                                <Insets left="5.0" />
-                                             </VBox.margin>
-                                          </Text>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #9a9a9e;" text="/ 16,345">
-                                             <VBox.margin>
-                                                <Insets left="5.0" />
-                                             </VBox.margin>
-                                          </Text>
-                                       </children>
-                                    </VBox>
-                                 </children>
-                                 <padding>
-                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                                 </padding>
-                                 <HBox.margin>
-                                    <Insets left="20.0" top="20.0" />
-                                 </HBox.margin>
-                              </HBox>
-                           </children>
-                        </HBox>
-                        <Button fx:id="logout" mnemonicParsing="false" onAction="#userLogOut" text="Log Out">
-                           <VBox.margin>
-                              <Insets left="270.0" top="100.0" />
-                           </VBox.margin>
-                        </Button>
-                     </children>
-                  </VBox>
-               </children>
-            </VBox>
-            <VBox fx:id="employee_screen" prefHeight="200.0" prefWidth="100.0" visible="false">
-               <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="124.0" prefWidth="596.0" style="-fx-background-color: #047270;">
-                     <children>
-                        <Text fx:id="scene_name" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="Employee">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="20.0" />
-                           </HBox.margin>
-                        </Text>
-                        <Button fx:id="adde_button" mnemonicParsing="false" onAction="#changeToAddEmployee" prefHeight="45.0" prefWidth="105.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Add Employee">
-                           <HBox.margin>
-                              <Insets left="200.0" />
-                           </HBox.margin>
-                        </Button>
-                        <Button fx:id="dele_button" mnemonicParsing="false" onAction="#changeToDeleteEmployee" prefHeight="45.0" prefWidth="114.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Delete Employee">
-                           <HBox.margin>
-                              <Insets left="20.0" />
-                           </HBox.margin>
-                        </Button>
-                     </children>
-                  </HBox>
-                  <StackPane prefHeight="506.0" prefWidth="635.0" style="-fx-background-color: #047270;">
-                     <children>
-                        <VBox fx:id="elist_screen" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="635.0" />
-                        <AnchorPane fx:id="adde_screen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="374.0" prefWidth="417.0" style="-fx-background-color: afafaf; -fx-border-color: blue;" visible="false">
-                           <children>
-                              <Label layoutX="50.0" layoutY="80.0" text="Password:" />
-                              <Label layoutX="50.0" layoutY="200.0" text="Email:" />
-                              <Label layoutX="50.0" layoutY="240.0" text="Telephone Number:" />
-                              <Label layoutX="50.0" layoutY="40.0" text="Username:" />
-                              <Label layoutX="51.0" layoutY="280.0" text="Department:" />
-                              <Label layoutX="50.0" layoutY="160.0" text="Surname:" />
-                              <Label layoutX="50.0" layoutY="120.0" text="Name:" />
-                              <TextField fx:id="add_username" layoutX="185.0" layoutY="36.0" style="-fx-background-color: white;" />
-                              <TextField fx:id="add_password" layoutX="185.0" layoutY="76.0" style="-fx-background-color: white;" />
-                              <TextField fx:id="add_name" layoutX="185.0" layoutY="116.0" style="-fx-background-color: white;" />
-                              <TextField fx:id="add_surname" layoutX="185.0" layoutY="158.0" style="-fx-background-color: white;" />
-                              <TextField fx:id="add_email" layoutX="185.0" layoutY="196.0" style="-fx-background-color: white;" />
-                              <TextField fx:id="add_tnumber" layoutX="185.0" layoutY="236.0" style="-fx-background-color: white;" />
-                              <TextField fx:id="add_department" layoutX="185.0" layoutY="276.0" style="-fx-background-color: white;" />
-                              <Button fx:id="esave_button" layoutX="182.0" layoutY="330.0" mnemonicParsing="false" onAction="#addNewEmployee" text="Save" />
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane fx:id="dele_screen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="335.0" style="-fx-background-color: afafaf; -fx-border-color: blue;" visible="false">
-                           <children>
-                              <Text layoutX="14.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entered the username of the person:" />
-                              <Label layoutX="14.0" layoutY="109.0" style="-fx-text-fill: blue;" text="Username:">
+                              <Circle fill="#1f93ff00" layoutX="114.0" layoutY="108.0" radius="75.0" stroke="#10c4f9" strokeLineCap="BUTT" strokeType="INSIDE" style="-fx-stroke-dash-array: 180;" />
+                              <Circle fill="#1f93ff00" layoutX="406.0" layoutY="108.0" radius="75.0" stroke="#10c4f9" strokeLineCap="BUTT" strokeType="INSIDE" style="-fx-stroke-dash-array: 180;" />
+                              <Text fill="#0fc7fb" layoutX="99.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" style="fx-font-size: 20px;" text="\%75">
                                  <font>
-                                    <Font name="System Bold" size="16.0" />
+                                    <Font name="System Bold" size="15.0" />
                                  </font>
-                              </Label>
-                              <TextField fx:id="del_employee" layoutX="120.0" layoutY="109.0" style="-fx-background-color: white;" />
-                              <Button fx:id="edel_button" layoutX="141.0" layoutY="193.0" mnemonicParsing="false" onAction="#delEmployee" text="delete" />
+                              </Text>
+                              <Text fill="#0fc7fb" layoutX="391.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" style="fx-font-size: 20px;" text="\%65">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="199.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-fill: #9a9a9e;" text="Cars in service" />
+                              <Text layoutX="232.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #9a9a9e;" text="24,732" />
+                              <Text layoutX="228.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #9a9a9e;" text="/ 29,345" />
+                              <Text layoutX="498.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-fill: #9a9a9e;" text="Cars Sold" />
+                              <Text layoutX="514.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #9a9a9e;" text="10,582" />
+                              <Text layoutX="509.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #9a9a9e;" text="/ 16,345" />
                            </children>
                         </AnchorPane>
                      </children>
-                  </StackPane>
-               </children>
-            </VBox>
-            <VBox fx:id="customer_screen" prefHeight="200.0" prefWidth="100.0" visible="false">
-               <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="118.0" prefWidth="596.0" style="-fx-background-color: #047270;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="Customer">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="20.0" />
-                           </HBox.margin>
-                        </Text>
-                     </children>
                   </HBox>
+                  <Button fx:id="logout" layoutX="271.0" layoutY="489.0" mnemonicParsing="false" onAction="#userLogOut" text="Log Out" />
                </children>
-            </VBox>
-            <VBox fx:id="cars_screen" prefHeight="200.0" prefWidth="100.0" visible="false">
+            </AnchorPane>
+            <AnchorPane fx:id="employee_screen" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: dcdcdc;" visible="false">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="118.0" prefWidth="596.0" style="-fx-background-color: #047270;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="Cars">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="20.0" />
-                           </HBox.margin>
-                        </Text>
-                     </children>
-                  </HBox>
+                  <Label layoutX="28.0" layoutY="14.0" prefHeight="68.0" prefWidth="169.0" text="Employee">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="edel_button" layoutX="432.0" layoutY="36.0" mnemonicParsing="false" onAction="#popUpEDelete" style="-fx-background-color: #047270; -fx-text-fill: white;" text="Delete Employee">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="adde_button" layoutX="312.0" layoutY="36.0" mnemonicParsing="false" onAction="#popUpEAdd" style="-fx-background-color: #047270; -fx-text-fill: white;" text="Add Employee">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
                </children>
-            </VBox>
-            <VBox fx:id="bills_screen" prefHeight="200.0" prefWidth="100.0" visible="false">
+            </AnchorPane>
+            <AnchorPane fx:id="customer_screen" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: dcdcdc;" visible="false">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="118.0" prefWidth="596.0" style="-fx-background-color: #047270;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="Bills">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="20.0" />
-                           </HBox.margin>
-                        </Text>
-                     </children>
-                  </HBox>
+                  <Label layoutX="28.0" layoutY="14.0" prefHeight="68.0" prefWidth="169.0" text="Customer">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="addcustomer_button" layoutX="312.0" layoutY="36.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Add Customer">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="delcustomer_button" layoutX="432.0" layoutY="36.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Delete Customer">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
                </children>
-            </VBox>
-            <VBox fx:id="settings_screen" prefHeight="200.0" prefWidth="100.0" visible="false">
+            </AnchorPane>
+            <AnchorPane fx:id="cars_screen" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: dcdcdc;" visible="false">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="118.0" prefWidth="596.0" style="-fx-background-color: #047270;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="Settings">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="20.0" />
-                           </HBox.margin>
-                        </Text>
-                     </children>
-                  </HBox>
+                  <Label layoutX="28.0" layoutY="14.0" prefHeight="68.0" prefWidth="169.0" text="Cars">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="addcar_button" layoutX="312.0" layoutY="36.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Add Car">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="delcar_button" layoutX="432.0" layoutY="36.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Delete Car">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
                </children>
-            </VBox>
+            </AnchorPane>
+            <AnchorPane fx:id="bills_screen" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: dcdcdc;" visible="false">
+               <children>
+                  <Label layoutX="28.0" layoutY="14.0" prefHeight="68.0" prefWidth="169.0" text="Bills">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="edel_button1" layoutX="432.0" layoutY="36.0" mnemonicParsing="false" onAction="#popUpEDelete" style="-fx-background-color: #047270; -fx-text-fill: white;" text="Delete Bills">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="adde_button1" layoutX="312.0" layoutY="36.0" mnemonicParsing="false" onAction="#popUpEAdd" style="-fx-background-color: #047270; -fx-text-fill: white;" text="Add Bills">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="settings_screen" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: dcdcdc;" visible="false">
+               <children>
+                  <Label layoutX="28.0" layoutY="14.0" prefHeight="68.0" prefWidth="169.0" text="Settings">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
          </children>
       </StackPane>
    </center>
