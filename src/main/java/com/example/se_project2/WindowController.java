@@ -13,8 +13,6 @@ import java.sql.Statement;
 
 public class WindowController {
 
-    private static int employee_ID = 3;
-
     @FXML
     private Button esave_button;
     @FXML
@@ -44,7 +42,6 @@ public class WindowController {
         Connection connection = db.getInstance().getConnection();
         Stage stage = (Stage) esave_button.getScene().getWindow();
         try {
-            int employee_ID2 = employee_ID;
             String username = add_username.getText();
             String password = add_password.getText();
             String name = add_name.getText();
@@ -58,9 +55,8 @@ public class WindowController {
             int status = statement.executeUpdate("insert into employee(employee_ID, username, password, email, telephone_number, department, Name, Surname)" +
                         "values('" + employee_ID2 + "', '" + username + "','" + password + "''" + email + "','" + tnumber + "','" + department + "','" + name + "','" + surname + "')");
             */
-            int status = statement.executeUpdate("insert into employee (employee_ID,username,password,email,telephone_number,department)" +
-                    " values('"+employee_ID2+"', '"+username+"','"+password+"','"+email+"','"+tnumber+"','" +department+"')");
-            employee_ID++;
+            int status = statement.executeUpdate("insert into employee (username,password,email,telephone_number,department)" +
+                    " values('"+username+"','"+password+"','"+email+"','"+tnumber+"','" +department+"')");
             if (status > 0) {
                 System.out.println("user registered");
             }
