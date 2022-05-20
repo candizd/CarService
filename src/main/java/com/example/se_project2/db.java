@@ -1,4 +1,7 @@
 package com.example.se_project2;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.sql.*;
 public class db {
     public  static Connection conn = null;
@@ -35,7 +38,50 @@ public class db {
         }
         return connection;
     }
+
     public static db getInstance() {
         return new db();
     }
+
+    public static ObservableList<Employee> getAllRecords() throws ClassNotFoundException, SQLException {
+        Connection connection = db.getInstance().getConnection();
+        String sql = "select name,surname,telephone_number,email FROM employee";
+
+        try {
+            Statement s = connection.createStatement();
+            ResultSet rsSet = s.executeQuery(sql);
+            ObservableList<Employee> empList = getEmployeeObjects(rsSet);
+            connection.close();
+            return empList;
+        }
+
+        catch(SQLException e) {
+            System.out.println("Error occured while fetching");
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    private static ObservableList<Employee> getEmployeeObjects(ResultSet rsSet) throws  ClassNotFoundException, SQLException {
+
+        try {
+            ObservableList<Employee> emplist = FXCollections.observableArrayList();
+            while(rsSet.next()) {
+                Employee emp = new Employee();
+                emp.setName(rsSet.getString("name"));
+                emp.setSurname(rsSet.getString("surname"));
+                emp.setTelefonnummer(rsSet.getString("telephone_number"));
+                emp.setEmail(rsSet.getString("email"));
+                emplist.add(emp);
+            }
+            return emplist;
+
+        } catch (Exception e) {
+            System.out.println("Error occurred while fetching ");
+            e.printStackTrace();
+            throw e;
+        }
+
+    }
+
 }

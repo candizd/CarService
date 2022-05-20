@@ -7,10 +7,6 @@ public class sales_employee extends Employee {
     ArrayList<cars_sold> cars_sold = new ArrayList<>();
     ArrayList<buying_customer> buying_customers = new ArrayList<>();
 
-    public sales_employee(String passwort, String name, String nachname, String telefonnummer, String employee_ID, String bankkonto, String adresse, String abteilung, String email) {
-        super(passwort, name, nachname, telefonnummer, employee_ID, bankkonto, adresse, abteilung, email);
-    }
-
     public void addNewCustomer(buying_customer c) {
         if(!buying_customers.contains(c)) {
             buying_customers.add(c);

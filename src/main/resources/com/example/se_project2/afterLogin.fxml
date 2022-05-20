@@ -3,6 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -214,6 +216,14 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
+                  <TableView fx:id="employeeTable" layoutY="123.0" prefHeight="477.0" prefWidth="600.0">
+                     <columns>
+                        <TableColumn fx:id="colEmpName" prefWidth="167.0" text="Name" />
+                        <TableColumn fx:id="colEmpSurname" prefWidth="165.00003051757812" text="Surname" />
+                        <TableColumn fx:id="colEmpPhone" prefWidth="142.0" text="Phone Number" />
+                        <TableColumn fx:id="colEmpEmail" prefWidth="124.0" text="Email" />
+                     </columns>
+                  </TableView>
                </children>
             </AnchorPane>
             <AnchorPane fx:id="customer_screen" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: dcdcdc;" visible="false">

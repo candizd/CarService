@@ -1,8 +1,12 @@
 package com.example.se_project2;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
@@ -12,14 +16,14 @@ import org.w3c.dom.events.MouseEvent;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class AfterLogin {
-
-
+public class AfterLogin  {
 
     @FXML
     private Button logout;
@@ -54,6 +58,16 @@ public class AfterLogin {
     @FXML
     private AnchorPane settings_screen;
 
+    @FXML
+    private TableColumn<Employee, String> colEmpName;
+    @FXML
+    private TableColumn<Employee, String> colEmpSurname;
+    @FXML
+    private TableColumn<Employee, String> colEmpPhone;
+    @FXML
+    private TableColumn<Employee, String> colEmpEmail;
+    @FXML
+    private TableView employeeTable;
 
     SceneController sceneController = new SceneController();
 
@@ -100,6 +114,23 @@ public class AfterLogin {
         main_stackpane.getChildren().forEach((scene) -> {
             scene.setVisible(false);
         });
+    }
+
+    @FXML
+    private void initialize() throws Exception {
+        colEmpName.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+        colEmpSurname.setCellValueFactory(cellData -> cellData.getValue().surnameProperty());
+        colEmpPhone.setCellValueFactory(cellData -> cellData.getValue().telefonnummerProperty());
+        colEmpEmail.setCellValueFactory(cellData -> cellData.getValue().emailProperty());
+        ObservableList<Employee> empList = db.getAllRecords();
+        populateTable(empList);
+    }
+
+    private void populateTable(ObservableList<Employee> empList) {
+
+        employeeTable.setItems(empList);
+
+
     }
 
 }
