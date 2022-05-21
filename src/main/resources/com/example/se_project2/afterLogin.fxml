@@ -233,7 +233,7 @@
                         <Font size="28.0" />
                      </font>
                   </Label>
-                  <Button fx:id="addcustomer_button" layoutX="312.0" layoutY="36.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Add Customer">
+                  <Button fx:id="addcustomer_button" layoutX="312.0" layoutY="36.0" mnemonicParsing="false" onAction="#popUpCustomerAdd" style="-fx-background-color: transparent;" text="Add Customer">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -252,12 +252,12 @@
                         <Font size="28.0" />
                      </font>
                   </Label>
-                  <Button fx:id="addcar_button" layoutX="312.0" layoutY="36.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Add Car">
+                  <Button fx:id="addcar_button" layoutX="312.0" layoutY="36.0" mnemonicParsing="false" onAction="#popUpCarAdd" style="-fx-background-color: #047270;" text="Add Car">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="delcar_button" layoutX="432.0" layoutY="36.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Delete Car">
+                  <Button fx:id="delcar_button" layoutX="432.0" layoutY="36.0" mnemonicParsing="false" style="-fx-background-color: #047270;" text="Delete Car">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -271,12 +271,12 @@
                         <Font size="28.0" />
                      </font>
                   </Label>
-                  <Button fx:id="edel_button1" layoutX="432.0" layoutY="36.0" mnemonicParsing="false" onAction="#popUpEDelete" style="-fx-background-color: #047270; -fx-text-fill: white;" text="Delete Bills">
+                  <Button layoutX="432.0" layoutY="36.0" mnemonicParsing="false" style="-fx-background-color: #047270; -fx-text-fill: white;" text="Delete Bills">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="adde_button1" layoutX="312.0" layoutY="36.0" mnemonicParsing="false" onAction="#popUpEAdd" style="-fx-background-color: #047270; -fx-text-fill: white;" text="Add Bills">
+                  <Button layoutX="312.0" layoutY="36.0" mnemonicParsing="false" style="-fx-background-color: #047270; -fx-text-fill: white;" text="Add Bills">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>

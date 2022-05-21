@@ -44,6 +44,10 @@ public class AfterLogin  {
     @FXML
     private Button button_settings;
     @FXML
+    private Button addcustomer_button;
+    @FXML
+    private Button addcar_button;
+    @FXML
     private StackPane main_stackpane;
     @FXML
     private AnchorPane main_screen;
@@ -107,7 +111,16 @@ public class AfterLogin  {
             sceneController.popUpWindow(event,"deleteEmployee.fxml");
         }
     }
-
+    public void popUpCustomerAdd(ActionEvent event) throws IOException {
+        if(addcustomer_button == event.getSource()) {
+            sceneController.popUpWindow(event,"addCustomer.fxml");
+        }
+    }
+    public void popUpCarAdd(ActionEvent event) throws IOException {
+        if(addcar_button == event.getSource()) {
+            sceneController.popUpWindow(event,"addCar.fxml");
+        }
+    }
 
     public void hideAllSceneItems() {
 

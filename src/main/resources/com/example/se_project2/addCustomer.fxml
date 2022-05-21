@@ -6,26 +6,23 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="375.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se_project2.WindowController">
     <children>
-        <AnchorPane fx:id="adde_screen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="375.0" prefWidth="420.0" style="-fx-background-color: afafaf; -fx-border-color: blue;">
+        <AnchorPane fx:id="adde_screen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="420.0" style="-fx-background-color: afafaf; -fx-border-color: blue;">
             <children>
                 <Label layoutX="50.0" layoutY="80.0" text="Surname:" />
                 <Label layoutX="50.0" layoutY="200.0" text="Section:" />
                 <Label layoutX="50.0" layoutY="240.0" text="Address:" />
                 <Label layoutX="50.0" layoutY="40.0" text="Name:" />
-                <Label layoutX="51.0" layoutY="280.0" text="ID Number:" />
                 <Label layoutX="50.0" layoutY="160.0" text="Telephone Number:" />
                 <Label layoutX="50.0" layoutY="120.0" text="Email:" />
-                <TextField fx:id="add_username" layoutX="185.0" layoutY="36.0" style="-fx-background-color: white;" />
-                <TextField fx:id="add_password" layoutX="185.0" layoutY="76.0" style="-fx-background-color: white;" />
-                <TextField fx:id="add_name" layoutX="185.0" layoutY="116.0" style="-fx-background-color: white;" />
-                <TextField fx:id="add_surname" layoutX="185.0" layoutY="158.0" style="-fx-background-color: white;" />
-                <TextField fx:id="add_email" layoutX="185.0" layoutY="196.0" style="-fx-background-color: white;" />
-                <TextField fx:id="add_tnumber" layoutX="185.0" layoutY="236.0" style="-fx-background-color: white;" />
-                <TextField fx:id="add_department" layoutX="185.0" layoutY="276.0" style="-fx-background-color: white;" />
-                <Button fx:id="customersave_button" layoutX="182.0" layoutY="330.0" mnemonicParsing="false" text="Save" />
+                <TextField fx:id="add_cname" layoutX="185.0" layoutY="36.0" style="-fx-background-color: white;" />
+                <TextField fx:id="add_csurname" layoutX="185.0" layoutY="76.0" style="-fx-background-color: white;" />
+                <TextField fx:id="add_cemail" layoutX="185.0" layoutY="116.0" style="-fx-background-color: white;" />
+                <TextField fx:id="add_cphone" layoutX="185.0" layoutY="158.0" style="-fx-background-color: white;" />
+                <TextField fx:id="add_csection" layoutX="185.0" layoutY="196.0" style="-fx-background-color: white;" />
+                <TextField fx:id="add_cadress" layoutX="185.0" layoutY="236.0" style="-fx-background-color: white;" />
+                <Button fx:id="customersave_button" layoutX="185.0" layoutY="296.0" mnemonicParsing="false" onAction="#addCustomer" text="Save" />
             </children>
         </AnchorPane>
     </children>

@@ -35,7 +35,32 @@ public class WindowController {
     private TextField add_department;
     @FXML
     private TextField del_employee;
-
+    @FXML
+    private TextField add_cname;
+    @FXML
+    private TextField add_csurname;
+    @FXML
+    private TextField add_cphone;
+    @FXML
+    private TextField add_cemail;
+    @FXML
+    private TextField add_csection;
+    @FXML
+    private TextField add_cadress;
+    @FXML
+    private Button customersave_button;
+    @FXML
+    private TextField add_brand;
+    @FXML
+    private TextField add_model;
+    @FXML
+    private TextField add_section;
+    @FXML
+    private TextField add_horsepower;
+    @FXML
+    private TextField add_price;
+    @FXML
+    private Button carsave_button;
 
     @FXML
     void addEmployee(ActionEvent event) throws SQLException {
@@ -51,12 +76,8 @@ public class WindowController {
             String department = add_department.getText();
             Statement statement = connection.createStatement();
 
-            /*
-            int status = statement.executeUpdate("insert into employee(employee_ID, username, password, email, telephone_number, department, Name, Surname)" +
-                        "values('" + employee_ID2 + "', '" + username + "','" + password + "''" + email + "','" + tnumber + "','" + department + "','" + name + "','" + surname + "')");
-            */
-            int status = statement.executeUpdate("insert into employee (username,password,email,telephone_number,department)" +
-                    " values('"+username+"','"+password+"','"+email+"','"+tnumber+"','" +department+"')");
+            int status = statement.executeUpdate("insert into employee (username,name,surname,password,email,telephone_number,department)" +
+                    " values('"+username+"', '"+name+"', '"+surname+"', '"+password+"', '"+email+"','"+tnumber+"', '" +department+"')");
             if (status > 0) {
                 System.out.println("user registered");
             }
@@ -83,6 +104,53 @@ public class WindowController {
         connection.close();
         stage.close();
     }
+    @FXML
+    void addCustomer(ActionEvent event) throws SQLException {
+        Connection connection = db.getInstance().getConnection();
+        Stage stage = (Stage) customersave_button.getScene().getWindow();
+        try {
+            String name = add_cname.getText();
+            String surname = add_csurname.getText();
+            String email = add_cemail.getText();
+            String phone = add_cphone.getText();
+            String section = add_csection.getText();
+            String address = add_cadress.getText();
+            Statement statement = connection.createStatement();
+            int status = statement.executeUpdate("insert into customer (name,surname,email,phone_number,section,address)" +
+                    " values('"+name+"','"+surname+"','"+email+"','"+phone+"','" +section+"','"+address+"')");
+            if (status > 0) {
+                System.out.println("customer registered");
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        connection.close();
+        stage.close();
+    }
+    @FXML
+    void addCar(ActionEvent event) throws SQLException {
+        Connection connection = db.getInstance().getConnection();
+        Stage stage = (Stage) carsave_button.getScene().getWindow();
+        try {
+            String brand = add_brand.getText();
+            String model = add_model.getText();
+            String section = add_section.getText();
+            String horsepower = add_horsepower.getText();
+            String price = add_price.getText();
 
+            Statement statement = connection.createStatement();
+            int status = statement.executeUpdate("insert into car (brand,model,horsepower,section,price)" +
+                    " values('"+brand+"','"+model+"','"+horsepower+"','" +section+"','"+price+"')");
+            if (status > 0) {
+                System.out.println("car registered");
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        connection.close();
+        stage.close();
+    }
 }
 
