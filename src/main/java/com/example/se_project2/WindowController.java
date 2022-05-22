@@ -61,6 +61,12 @@ public class WindowController {
     private TextField add_price;
     @FXML
     private Button carsave_button;
+    @FXML
+    private TextField add_date;
+    @FXML
+    private TextField add_bprice;
+    @FXML
+    private Button billsave_button;
 
     @FXML
     void addEmployee(ActionEvent event) throws SQLException {
@@ -145,6 +151,26 @@ public class WindowController {
             if (status > 0) {
                 System.out.println("car registered");
             }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        connection.close();
+        stage.close();
+    }
+    @FXML
+    void addBill(ActionEvent event) throws SQLException {
+        Connection connection = db.getInstance().getConnection();
+        Stage stage = (Stage) billsave_button.getScene().getWindow();
+
+        try {
+
+            String date = add_date.getText();
+            String price = add_bprice.getText();
+            Statement statement = connection.createStatement();
+            int status = statement.executeUpdate("insert into bill (date,price)" +
+                    " values('" +date+"','"+price+"')");
+
         }
         catch (SQLException e) {
             e.printStackTrace();

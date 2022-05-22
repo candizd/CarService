@@ -4,6 +4,7 @@ import javafx.collections.ObservableList;
 
 import java.sql.*;
 public class db {
+   /*
     public  static Connection conn = null;
 
     public void connect() {
@@ -24,14 +25,15 @@ public class db {
         }
     }
 
+    */
+
     public Connection getConnection() {
         String url = "jdbc:sqlite:C:\\Users\\hasan\\IdeaProjects\\SE_Project2\\src\\main\\resources\\com\\example\\se_project2\\carservice.db";
         Connection connection = null;
         try {
             Class.forName("org.sqlite.JDBC");
             connection = DriverManager.getConnection(url);
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -43,7 +45,7 @@ public class db {
         return new db();
     }
 
-    public static ObservableList<Employee> getAllRecords() throws ClassNotFoundException, SQLException {
+    public static ObservableList<Employee> getAllEmployeeRecords() throws ClassNotFoundException, SQLException {
         Connection connection = db.getInstance().getConnection();
         String sql = "select name,surname,telephone_number,email FROM employee";
 
@@ -53,20 +55,18 @@ public class db {
             ObservableList<Employee> empList = getEmployeeObjects(rsSet);
             connection.close();
             return empList;
-        }
-
-        catch(SQLException e) {
+        } catch (SQLException e) {
             System.out.println("Error occured while fetching");
             e.printStackTrace();
             throw e;
         }
     }
 
-    private static ObservableList<Employee> getEmployeeObjects(ResultSet rsSet) throws  ClassNotFoundException, SQLException {
+    private static ObservableList<Employee> getEmployeeObjects(ResultSet rsSet) throws ClassNotFoundException, SQLException {
 
         try {
             ObservableList<Employee> emplist = FXCollections.observableArrayList();
-            while(rsSet.next()) {
+            while (rsSet.next()) {
                 Employee emp = new Employee();
                 emp.setName(rsSet.getString("name"));
                 emp.setSurname(rsSet.getString("surname"));
@@ -84,4 +84,46 @@ public class db {
 
     }
 
+    public static ObservableList<Customer> getAllCustomerRecords() throws ClassNotFoundException, SQLException {
+        Connection connection = db.getInstance().getConnection();
+        String sql = "select name,surname,email,phone_number,section,address FROM customer";
+
+        try {
+            Statement s = connection.createStatement();
+            ResultSet rsSet = s.executeQuery(sql);
+            ObservableList<Customer> customers = getCustomerObjects(rsSet);
+            connection.close();
+            return customers;
+
+        } catch (SQLException e) {
+            System.out.println("Error occured while fetching");
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    private static ObservableList<Customer> getCustomerObjects(ResultSet rsSet) throws ClassNotFoundException, SQLException {
+
+        try {
+            ObservableList<Customer> customerList = FXCollections.observableArrayList();
+            while (rsSet.next()) {
+                Customer customer = new Customer();
+                customer.setName(rsSet.getString("name"));
+                customer.setSurname(rsSet.getString("surname"));
+                customer.setPhone(rsSet.getString("phone_number"));
+                customer.setEmail(rsSet.getString("email"));
+                customer.setSection(rsSet.getString("section"));
+                customer.setAddress(rsSet.getString("address"));
+                customerList.add(customer);
+            }
+            return customerList;
+
+        } catch (Exception e) {
+            System.out.println("Error occurred while fetching ");
+            e.printStackTrace();
+            throw e;
+        }
+
+
+    }
 }

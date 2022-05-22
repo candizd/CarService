@@ -17,11 +17,6 @@ public class Employee  {
     private StringProperty email;
 
 
-
-    public String getEmployee_ID() {
-        return this.employee_ID;
-    }
-
     public Employee() {
         this.name = new SimpleStringProperty();
         this.surname = new SimpleStringProperty();

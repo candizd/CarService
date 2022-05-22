@@ -6,37 +6,4 @@ public class HR_Employee extends Employee {
 
     ArrayList<Employee> employees = new ArrayList<>();
 
-
-    public String getEmployee_ID() {
-        return super.getEmployee_ID();
-    }
-
-    public void changePassword(String newPasswort, String Employee_ID) {
-    }
-    public void addNewEmployee(Employee e) {
-        if(!employees.contains(e)) {
-            employees.add(e);
-        }
-        else {
-            System.out.println("Already exists.");
-        }
-    }
-    public void removeEmployee(String id) {
-        for(int i = 0; i < employees.size(); i++) {
-            if(employees.get(i).getEmployee_ID().equals(id)) {
-                employees.remove(i);
-            }
-        }
-    }
-    public Employee findEmployee(String id) {
-        for(Employee e : employees) {
-            if(e.getEmployee_ID().equals(id)) {
-                return e;
-            }
-            else {
-                System.out.println("Error");
-            }
-        }
-        return null;
-    }
 }

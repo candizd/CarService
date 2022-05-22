@@ -3,25 +3,15 @@ package com.example.se_project2;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
-import org.controlsfx.control.action.Action;
-import org.w3c.dom.events.MouseEvent;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.URL;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
+
 
 public class AfterLogin  {
 
@@ -48,6 +38,8 @@ public class AfterLogin  {
     @FXML
     private Button addcar_button;
     @FXML
+    private Button addBill_button;
+    @FXML
     private StackPane main_stackpane;
     @FXML
     private AnchorPane main_screen;
@@ -72,6 +64,22 @@ public class AfterLogin  {
     private TableColumn<Employee, String> colEmpEmail;
     @FXML
     private TableView employeeTable;
+
+    @FXML
+    private TableColumn<Customer,String> colCustomerName;
+    @FXML
+    private TableColumn<Customer,String> colCustomerSurname;
+    @FXML
+    private TableColumn<Customer,String> colCustomerEmail;
+    @FXML
+    private TableColumn<Customer,String> colCustomerPhone;
+    @FXML
+    private TableColumn<Customer,String> colCustomerSection;
+    @FXML
+    private TableColumn<Customer,String> colCustomerAddress;
+    @FXML
+    private TableView customerTable;
+
 
     SceneController sceneController = new SceneController();
 
@@ -121,6 +129,11 @@ public class AfterLogin  {
             sceneController.popUpWindow(event,"addCar.fxml");
         }
     }
+    public void popUpBillAdd(ActionEvent event) throws IOException {
+        if(addBill_button == event.getSource()) {
+            sceneController.popUpWindow(event,"addBill.fxml");
+        }
+    }
 
     public void hideAllSceneItems() {
 
@@ -135,15 +148,25 @@ public class AfterLogin  {
         colEmpSurname.setCellValueFactory(cellData -> cellData.getValue().surnameProperty());
         colEmpPhone.setCellValueFactory(cellData -> cellData.getValue().telefonnummerProperty());
         colEmpEmail.setCellValueFactory(cellData -> cellData.getValue().emailProperty());
-        ObservableList<Employee> empList = db.getAllRecords();
-        populateTable(empList);
+        ObservableList<Employee> empList = db.getAllEmployeeRecords();
+        populateEmployeeTable(empList);
+
+        colCustomerName.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+        colCustomerSurname.setCellValueFactory(cellData -> cellData.getValue().surnameProperty());
+        colCustomerEmail.setCellValueFactory(cellData -> cellData.getValue().emailProperty());
+        colCustomerPhone.setCellValueFactory(cellData -> cellData.getValue().phoneProperty());
+        colCustomerSection.setCellValueFactory(cellData -> cellData.getValue().sectionProperty());
+        colCustomerAddress.setCellValueFactory(cellData -> cellData.getValue().addressProperty());
+
+        ObservableList<Customer> customers = db.getAllCustomerRecords();
+        populateCustomerTable(customers);
     }
 
-    private void populateTable(ObservableList<Employee> empList) {
-
+    private void populateEmployeeTable(ObservableList<Employee> empList) {
         employeeTable.setItems(empList);
-
-
+    }
+    private void populateCustomerTable(ObservableList<Customer> customers) {
+        customerTable.setItems(customers);
     }
 
 }

@@ -6,17 +6,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="225.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="225.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se_project2.WindowController">
    <children>
       <AnchorPane fx:id="adde_screen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="225.0" prefWidth="420.0" style="-fx-background-color: afafaf; -fx-border-color: blue;">
          <children>
             <Label layoutX="50.0" layoutY="80.0" text="Date:" />
-            <Label layoutX="50.0" layoutY="40.0" text="Bill ID:" />
             <Label layoutX="50.0" layoutY="120.0" text="Price:" />
-            <TextField fx:id="add_billID" layoutX="185.0" layoutY="36.0" style="-fx-background-color: white;" />
             <TextField fx:id="add_date" layoutX="185.0" layoutY="76.0" style="-fx-background-color: white;" />
             <TextField fx:id="add_bprice" layoutX="185.0" layoutY="116.0" style="-fx-background-color: white;" />
-            <Button fx:id="carsave_button" layoutX="185.0" layoutY="174.0" mnemonicParsing="false" text="Save" />
+            <Button fx:id="billsave_button" layoutX="185.0" layoutY="174.0" mnemonicParsing="false" onAction="#addBill" text="Save" />
          </children>
       </AnchorPane>
    </children>

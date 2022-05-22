@@ -233,16 +233,26 @@
                         <Font size="28.0" />
                      </font>
                   </Label>
-                  <Button fx:id="addcustomer_button" layoutX="312.0" layoutY="36.0" mnemonicParsing="false" onAction="#popUpCustomerAdd" style="-fx-background-color: transparent;" text="Add Customer">
+                  <Button fx:id="addcustomer_button" layoutX="312.0" layoutY="36.0" mnemonicParsing="false" onAction="#popUpCustomerAdd" style="-fx-background-color: #047270;" text="Add Customer">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="delcustomer_button" layoutX="432.0" layoutY="36.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Delete Customer">
+                  <Button fx:id="delcustomer_button" layoutX="432.0" layoutY="36.0" mnemonicParsing="false" style="-fx-background-color: #047270;" text="Delete Customer">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
+                  <TableView fx:id="customerTable" layoutY="116.0" prefHeight="477.0" prefWidth="600.0">
+                     <columns>
+                        <TableColumn fx:id="colCustomerName" prefWidth="88.0" text="Name" />
+                        <TableColumn fx:id="colCustomerSurname" prefWidth="106.0" text="Surname" />
+                        <TableColumn fx:id="colCustomerEmail" prefWidth="84.00003051757812" text="Email" />
+                        <TableColumn fx:id="colCustomerPhone" prefWidth="116.0" text="Phone Number" />
+                        <TableColumn fx:id="colCustomerSection" prefWidth="92.0" text="Section" />
+                        <TableColumn fx:id="colCustomerAddress" prefWidth="111.0" text="Address" />
+                     </columns>
+                  </TableView>
                </children>
             </AnchorPane>
             <AnchorPane fx:id="cars_screen" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: dcdcdc;" visible="false">
@@ -276,7 +286,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button layoutX="312.0" layoutY="36.0" mnemonicParsing="false" style="-fx-background-color: #047270; -fx-text-fill: white;" text="Add Bills">
+                  <Button fx:id="addBill_button" layoutX="312.0" layoutY="36.0" mnemonicParsing="false" onAction="#popUpBillAdd" style="-fx-background-color: #047270; -fx-text-fill: white;" text="Add Bills">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
