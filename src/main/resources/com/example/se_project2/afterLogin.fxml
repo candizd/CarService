@@ -291,6 +291,13 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
+                  <TableView fx:id="billTable" layoutY="123.0" prefHeight="477.0" prefWidth="600.0">
+                     <columns>
+                        <TableColumn fx:id="colBillID" prefWidth="63.0" text="ID" />
+                        <TableColumn fx:id="colBillDate" prefWidth="267.0000305175781" text="Date" />
+                        <TableColumn fx:id="colBillPrice" prefWidth="277.0" text="Price" />
+                     </columns>
+                  </TableView>
                </children>
             </AnchorPane>
             <AnchorPane fx:id="settings_screen" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: dcdcdc;" visible="false">

@@ -80,6 +80,14 @@ public class AfterLogin  {
     @FXML
     private TableView customerTable;
 
+    @FXML
+    private TableColumn<Bill,Integer> colBillID;
+    @FXML
+    private TableColumn<Bill,String> colBillDate;
+    @FXML
+    private TableColumn<Bill,String> colBillPrice;
+    @FXML
+    private TableView billTable;
 
     SceneController sceneController = new SceneController();
 
@@ -157,9 +165,15 @@ public class AfterLogin  {
         colCustomerPhone.setCellValueFactory(cellData -> cellData.getValue().phoneProperty());
         colCustomerSection.setCellValueFactory(cellData -> cellData.getValue().sectionProperty());
         colCustomerAddress.setCellValueFactory(cellData -> cellData.getValue().addressProperty());
-
         ObservableList<Customer> customers = db.getAllCustomerRecords();
         populateCustomerTable(customers);
+
+        colBillID.setCellValueFactory(cellData -> cellData.getValue().bill_IDProperty().asObject());
+        colBillDate.setCellValueFactory(cellData -> cellData.getValue().dateProperty());
+        colBillPrice.setCellValueFactory(cellData -> cellData.getValue().priceProperty());
+        ObservableList<Bill> bills = db.getAllBillRecords();
+        populateBillTable(bills);
+
     }
 
     private void populateEmployeeTable(ObservableList<Employee> empList) {
@@ -167,6 +181,9 @@ public class AfterLogin  {
     }
     private void populateCustomerTable(ObservableList<Customer> customers) {
         customerTable.setItems(customers);
+    }
+    private void populateBillTable(ObservableList<Bill> bills) {
+        billTable.setItems(bills);
     }
 
 }

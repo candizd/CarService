@@ -126,4 +126,44 @@ public class db {
 
 
     }
+
+    public static ObservableList<Bill> getAllBillRecords() throws ClassNotFoundException, SQLException {
+        Connection connection = db.getInstance().getConnection();
+        String sql = "select id,date,price FROM bill";
+
+        try {
+            Statement s = connection.createStatement();
+            ResultSet rsSet = s.executeQuery(sql);
+            ObservableList<Bill> billList = getBillObjects(rsSet);
+            connection.close();
+            return billList;
+
+        } catch (SQLException e) {
+            System.out.println("Error occured while fetching");
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    private static ObservableList<Bill> getBillObjects(ResultSet rsSet) throws ClassNotFoundException, SQLException {
+
+        try {
+            ObservableList<Bill> billList = FXCollections.observableArrayList();
+            while (rsSet.next()) {
+                Bill bill = new Bill();
+                bill.setBill_ID(rsSet.getInt("id"));
+                bill.setDate(rsSet.getString("date"));
+                bill.setPrice(rsSet.getString("price"));
+                billList.add(bill);
+            }
+            return billList;
+
+        } catch (Exception e) {
+            System.out.println("Error occurred while fetching ");
+            e.printStackTrace();
+            throw e;
+        }
+
+
+    }
 }
