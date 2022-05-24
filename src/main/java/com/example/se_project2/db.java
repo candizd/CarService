@@ -165,6 +165,50 @@ public class db {
             throw e;
         }
 
+    }
+    public static ObservableList<Cars> getAllCarRecords() throws ClassNotFoundException, SQLException {
+        Connection connection = db.getInstance().getConnection();
+        String sql = "select car_ID,brand,model,horsepower,section,price FROM car"; //
+
+        try {
+            Statement s = connection.createStatement();
+            ResultSet rsSet = s.executeQuery(sql);
+            ObservableList<Cars> cars = getCarObjects(rsSet);
+            connection.close();
+            return cars;
+
+        } catch (SQLException e) {
+            System.out.println("Error occured while fetching");
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    private static ObservableList<Cars> getCarObjects(ResultSet rsSet) throws ClassNotFoundException, SQLException {
+
+        try {
+            ObservableList<Cars> cars = FXCollections.observableArrayList();
+            while (rsSet.next()) {
+                Cars car = new Cars();
+                car.setID(rsSet.getInt("car_ID"));
+                car.setBrand(rsSet.getString("brand"));
+                car.setModel(rsSet.getString("model"));
+                car.setHorsepower(rsSet.getString("horsepower"));
+                car.setSection(rsSet.getString("section"));
+                car.setPrice(rsSet.getString("price"));
+                cars.add(car);
+            }
+            return cars;
+
+        } catch (Exception e) {
+            System.out.println("Error occurred while fetching ");
+            e.printStackTrace();
+            throw e;
+        }
 
     }
+
+
+
+
 }

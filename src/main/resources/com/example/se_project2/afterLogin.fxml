@@ -216,7 +216,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <TableView fx:id="employeeTable" layoutY="123.0" prefHeight="477.0" prefWidth="600.0">
+                  <TableView fx:id="employeeTable" layoutY="123.0" prefHeight="477.0" prefWidth="600.0" style="-fx-background-color: dcdcdc;">
                      <columns>
                         <TableColumn fx:id="colEmpUsername" prefWidth="118.0" text="Username" />
                         <TableColumn fx:id="colEmpName" prefWidth="138.0" text="Name" />
@@ -234,17 +234,17 @@
                         <Font size="28.0" />
                      </font>
                   </Label>
-                  <Button fx:id="addcustomer_button" layoutX="312.0" layoutY="36.0" mnemonicParsing="false" onAction="#popUpCustomerAdd" style="-fx-background-color: #047270;" text="Add Customer">
+                  <Button fx:id="addcustomer_button" layoutX="312.0" layoutY="36.0" mnemonicParsing="false" onAction="#popUpCustomerAdd" style="-fx-background-color: #047270; -fx-text-fill: white;" text="Add Customer">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="delcustomer_button" layoutX="432.0" layoutY="36.0" mnemonicParsing="false" style="-fx-background-color: #047270;" text="Delete Customer">
+                  <Button fx:id="delcustomer_button" layoutX="432.0" layoutY="36.0" mnemonicParsing="false" onAction="#deleteCustomer" style="-fx-background-color: #047270; -fx-text-fill: white;" text="Delete Customer">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <TableView fx:id="customerTable" layoutY="116.0" prefHeight="477.0" prefWidth="600.0">
+                  <TableView fx:id="customerTable" layoutY="116.0" prefHeight="477.0" prefWidth="600.0" style="-fx-background-color: dcdcdc;">
                      <columns>
                         <TableColumn fx:id="colCustomerName" prefWidth="88.0" text="Name" />
                         <TableColumn fx:id="colCustomerSurname" prefWidth="106.0" text="Surname" />
@@ -263,16 +263,26 @@
                         <Font size="28.0" />
                      </font>
                   </Label>
-                  <Button fx:id="addcar_button" layoutX="312.0" layoutY="36.0" mnemonicParsing="false" onAction="#popUpCarAdd" style="-fx-background-color: #047270;" text="Add Car">
+                  <Button fx:id="addcar_button" layoutX="312.0" layoutY="36.0" mnemonicParsing="false" onAction="#popUpCarAdd" style="-fx-background-color: #047270; -fx-text-fill: white;" text="Add Car">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="delcar_button" layoutX="432.0" layoutY="36.0" mnemonicParsing="false" style="-fx-background-color: #047270;" text="Delete Car">
+                  <Button fx:id="delcar_button" layoutX="432.0" layoutY="36.0" mnemonicParsing="false" onAction="#deleteCar" style="-fx-background-color: #047270; -fx-text-fill: white;" text="Delete Car">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
+                  <TableView fx:id="carTable" layoutY="116.0" prefHeight="477.0" prefWidth="600.0" style="-fx-background-color: dcdcdc;">
+                     <columns>
+                        <TableColumn fx:id="colCarID" prefWidth="88.0" text="ID" />
+                        <TableColumn fx:id="colCarBrand" prefWidth="106.0" text="Brand" />
+                        <TableColumn fx:id="colCarModel" prefWidth="84.00003051757812" text="Model" />
+                        <TableColumn fx:id="colCarHorsepower" prefWidth="116.0" text="Horsepower" />
+                        <TableColumn fx:id="colCarSection" prefWidth="92.0" text="Section" />
+                        <TableColumn fx:id="colCarPrice" prefWidth="111.0" text="Price" />
+                     </columns>
+                  </TableView>
                </children>
             </AnchorPane>
             <AnchorPane fx:id="bills_screen" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: dcdcdc;" visible="false">
@@ -282,7 +292,7 @@
                         <Font size="28.0" />
                      </font>
                   </Label>
-                  <Button layoutX="432.0" layoutY="36.0" mnemonicParsing="false" style="-fx-background-color: #047270; -fx-text-fill: white;" text="Delete Bills">
+                  <Button fx:id="delbill_button" layoutX="432.0" layoutY="36.0" mnemonicParsing="false" onAction="#deleteBill" style="-fx-background-color: #047270; -fx-text-fill: white;" text="Delete Bills">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -292,7 +302,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <TableView fx:id="billTable" layoutY="123.0" prefHeight="477.0" prefWidth="600.0">
+                  <TableView fx:id="billTable" layoutY="123.0" prefHeight="477.0" prefWidth="600.0" style="-fx-background-color: dcdcdc;">
                      <columns>
                         <TableColumn fx:id="colBillID" prefWidth="63.0" text="ID" />
                         <TableColumn fx:id="colBillDate" prefWidth="267.0000305175781" text="Date" />

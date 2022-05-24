@@ -93,23 +93,7 @@ public class WindowController {
         connection.close();
         stage.close();
     }
-    @FXML
-    void deleteEmployee(ActionEvent event) throws SQLException {
-        Connection connection = db.getInstance().getConnection();
-        Stage stage = (Stage) edel_button.getScene().getWindow();
-        try {
-            String username = del_employee.getText();
-            Statement statement = connection.createStatement();
-            int status = statement.executeUpdate("delete from employee where username = '"+ username +"'");
-            if(status > 0) {
-                System.out.println("employee deleted");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        connection.close();
-        stage.close();
-    }
+
     @FXML
     void addCustomer(ActionEvent event) throws SQLException {
         Connection connection = db.getInstance().getConnection();
@@ -158,6 +142,7 @@ public class WindowController {
         connection.close();
         stage.close();
     }
+
     @FXML
     void addBill(ActionEvent event) throws SQLException {
         Connection connection = db.getInstance().getConnection();

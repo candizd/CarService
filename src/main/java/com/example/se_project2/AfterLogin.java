@@ -32,9 +32,15 @@ public class AfterLogin  {
     @FXML
     private Button button_customer;
     @FXML
+    private Button delcustomer_button;
+    @FXML
     private Button button_cars;
     @FXML
     private Button button_bills;
+    @FXML
+    private Button delbill_button;
+    @FXML
+    private Button delcar_button;
     @FXML
     private Button button_settings;
     @FXML
@@ -84,7 +90,23 @@ public class AfterLogin  {
     @FXML
     private TableColumn<Customer,String> colCustomerAddress;
     @FXML
-    private TableView customerTable;
+    private TableView<Customer> customerTable;
+
+    @FXML
+    private TableColumn<Cars,Integer> colCarID;
+    @FXML
+    private TableColumn<Cars,String> colCarBrand;
+    @FXML
+    private TableColumn<Cars,String> colCarModel;
+    @FXML
+    private TableColumn<Cars,String> colCarHorsepower;
+    @FXML
+    private TableColumn<Cars,String> colCarSection;
+    @FXML
+    private TableColumn<Cars,String> colCarPrice;
+    @FXML
+    private TableView<Cars> carTable;
+
 
     @FXML
     private TableColumn<Bill,Integer> colBillID;
@@ -93,7 +115,7 @@ public class AfterLogin  {
     @FXML
     private TableColumn<Bill,String> colBillPrice;
     @FXML
-    private TableView billTable;
+    private TableView<Bill> billTable;
 
     SceneController sceneController = new SceneController();
 
@@ -123,6 +145,14 @@ public class AfterLogin  {
             main_screen.setVisible(true);
         }
     }
+
+    public void hideAllSceneItems() {
+
+        main_stackpane.getChildren().forEach((scene) -> {
+            scene.setVisible(false);
+        });
+    }
+
     public void popUpEAdd(ActionEvent event) throws IOException {
         if(adde_button == event.getSource()) {
             sceneController.popUpWindow(event,"addEmployee.fxml");
@@ -152,23 +182,74 @@ public class AfterLogin  {
             sceneController.popUpWindow(event,"addCustomer.fxml");
         }
     }
+    public void deleteCustomer(ActionEvent event) throws SQLException {
+        Connection connection = db.getInstance().getConnection();
+        if(delcustomer_button == event.getSource()) {
+            Customer customer = customerTable.getSelectionModel().getSelectedItem();
+            String email = customer.getEmail();
+            try {
+                Statement statement = connection.createStatement();
+                int status = statement.executeUpdate("delete from customer where email = '"+ email +"'");
+                if(status > 0) {
+                    System.out.println("customer deleted");
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            customerTable.getItems().removeAll(customerTable.getSelectionModel().getSelectedItem());
+            connection.close();
+        }
+    }
+
     public void popUpCarAdd(ActionEvent event) throws IOException {
         if(addcar_button == event.getSource()) {
             sceneController.popUpWindow(event,"addCar.fxml");
         }
     }
+    public void deleteCar(ActionEvent event) throws SQLException {
+        Connection connection = db.getInstance().getConnection();
+        if(delcar_button == event.getSource()) {
+            Cars car = carTable.getSelectionModel().getSelectedItem();
+            Integer id = car.getID();
+            try {
+                Statement statement = connection.createStatement();
+                int status = statement.executeUpdate("delete from car where car_ID = '"+ id +"'");
+                if(status > 0) {
+                    System.out.println("car entry deleted");
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            carTable.getItems().removeAll(carTable.getSelectionModel().getSelectedItem());
+            connection.close();
+        }
+    }
+
     public void popUpBillAdd(ActionEvent event) throws IOException {
         if(addBill_button == event.getSource()) {
             sceneController.popUpWindow(event,"addBill.fxml");
         }
     }
 
-    public void hideAllSceneItems() {
-
-        main_stackpane.getChildren().forEach((scene) -> {
-            scene.setVisible(false);
-        });
+    public void deleteBill(ActionEvent event) throws SQLException {
+        Connection connection = db.getInstance().getConnection();
+        if(delbill_button == event.getSource()) {
+            Bill bill = billTable.getSelectionModel().getSelectedItem();
+            Integer id = bill.getBill_ID();
+            try {
+                Statement statement = connection.createStatement();
+                int status = statement.executeUpdate("delete from bill where id = '"+ id +"'");
+                if(status > 0) {
+                    System.out.println("bill entry deleted");
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            billTable.getItems().removeAll(billTable.getSelectionModel().getSelectedItem());
+            connection.close();
+        }
     }
+
 
     @FXML
     private void initialize() throws Exception {
@@ -189,6 +270,15 @@ public class AfterLogin  {
         ObservableList<Customer> customers = db.getAllCustomerRecords();
         populateCustomerTable(customers);
 
+        colCarID.setCellValueFactory(cellData -> cellData.getValue().IDProperty().asObject());
+        colCarBrand.setCellValueFactory(cellData -> cellData.getValue().brandProperty());
+        colCarModel.setCellValueFactory(cellData -> cellData.getValue().modelProperty());
+        colCarHorsepower.setCellValueFactory(cellData -> cellData.getValue().horsepowerProperty());
+        colCarSection.setCellValueFactory(cellData -> cellData.getValue().sectionProperty());
+        colCarPrice.setCellValueFactory(cellData -> cellData.getValue().priceProperty());
+        ObservableList<Cars> cars = db.getAllCarRecords();
+        populateCarTable(cars);
+
         colBillID.setCellValueFactory(cellData -> cellData.getValue().bill_IDProperty().asObject());
         colBillDate.setCellValueFactory(cellData -> cellData.getValue().dateProperty());
         colBillPrice.setCellValueFactory(cellData -> cellData.getValue().priceProperty());
@@ -205,6 +295,9 @@ public class AfterLogin  {
     }
     private void populateBillTable(ObservableList<Bill> bills) {
         billTable.setItems(bills);
+    }
+    private void populateCarTable(ObservableList<Cars> cars) {
+        carTable.setItems(cars);
     }
 
 }
