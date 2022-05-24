@@ -6,14 +6,10 @@ import java.util.ArrayList;
 
 public class Employee  {
 
-    private String passwort;
+    private StringProperty username;
     private StringProperty name;
     private StringProperty surname;
     private StringProperty telefonnummer;
-    private String employee_ID;
-    protected String bankkonto;
-    protected String adresse;
-    protected String abteilung;
     private StringProperty email;
 
 
@@ -22,6 +18,19 @@ public class Employee  {
         this.surname = new SimpleStringProperty();
         this.telefonnummer = new SimpleStringProperty();
         this.email = new SimpleStringProperty();
+        this.username = new SimpleStringProperty();
+    }
+
+    public String getUsername() {
+        return username.get();
+    }
+
+    public StringProperty usernameProperty() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username.set(username);
     }
 
     public String getName() {

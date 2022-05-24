@@ -47,7 +47,7 @@ public class db {
 
     public static ObservableList<Employee> getAllEmployeeRecords() throws ClassNotFoundException, SQLException {
         Connection connection = db.getInstance().getConnection();
-        String sql = "select name,surname,telephone_number,email FROM employee";
+        String sql = "select username,name,surname,telephone_number,email FROM employee";
 
         try {
             Statement s = connection.createStatement();
@@ -68,6 +68,7 @@ public class db {
             ObservableList<Employee> emplist = FXCollections.observableArrayList();
             while (rsSet.next()) {
                 Employee emp = new Employee();
+                emp.setUsername(rsSet.getString("username"));
                 emp.setName(rsSet.getString("name"));
                 emp.setSurname(rsSet.getString("surname"));
                 emp.setTelefonnummer(rsSet.getString("telephone_number"));

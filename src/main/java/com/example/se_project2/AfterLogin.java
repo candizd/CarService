@@ -9,8 +9,12 @@ import javafx.scene.control.TableView;
 
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 
 public class AfterLogin  {
@@ -55,6 +59,8 @@ public class AfterLogin  {
     private AnchorPane settings_screen;
 
     @FXML
+    private TableColumn<Employee,String> colEmpUsername;
+    @FXML
     private TableColumn<Employee, String> colEmpName;
     @FXML
     private TableColumn<Employee, String> colEmpSurname;
@@ -63,7 +69,7 @@ public class AfterLogin  {
     @FXML
     private TableColumn<Employee, String> colEmpEmail;
     @FXML
-    private TableView employeeTable;
+    private TableView<Employee> employeeTable;
 
     @FXML
     private TableColumn<Customer,String> colCustomerName;
@@ -122,11 +128,25 @@ public class AfterLogin  {
             sceneController.popUpWindow(event,"addEmployee.fxml");
         }
     }
-    public void popUpEDelete(ActionEvent event) throws IOException {
+    public void popUpEDelete(ActionEvent event) throws IOException, SQLException {
+        Connection connection = db.getInstance().getConnection();
         if(edel_button == event.getSource()) {
-            sceneController.popUpWindow(event,"deleteEmployee.fxml");
+            Employee employee = employeeTable.getSelectionModel().getSelectedItem();
+            String username = employee.getUsername();
+            try {
+                Statement statement = connection.createStatement();
+                int status = statement.executeUpdate("delete from employee where username = '"+ username +"'");
+                if(status > 0) {
+                    System.out.println("employee deleted");
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            employeeTable.getItems().removeAll(employeeTable.getSelectionModel().getSelectedItem());
+            connection.close();
         }
     }
+
     public void popUpCustomerAdd(ActionEvent event) throws IOException {
         if(addcustomer_button == event.getSource()) {
             sceneController.popUpWindow(event,"addCustomer.fxml");
@@ -152,6 +172,7 @@ public class AfterLogin  {
 
     @FXML
     private void initialize() throws Exception {
+        colEmpUsername.setCellValueFactory(cellData -> cellData.getValue().usernameProperty());
         colEmpName.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
         colEmpSurname.setCellValueFactory(cellData -> cellData.getValue().surnameProperty());
         colEmpPhone.setCellValueFactory(cellData -> cellData.getValue().telefonnummerProperty());

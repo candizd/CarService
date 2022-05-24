@@ -218,10 +218,11 @@
                   </Button>
                   <TableView fx:id="employeeTable" layoutY="123.0" prefHeight="477.0" prefWidth="600.0">
                      <columns>
-                        <TableColumn fx:id="colEmpName" prefWidth="167.0" text="Name" />
-                        <TableColumn fx:id="colEmpSurname" prefWidth="165.00003051757812" text="Surname" />
-                        <TableColumn fx:id="colEmpPhone" prefWidth="142.0" text="Phone Number" />
-                        <TableColumn fx:id="colEmpEmail" prefWidth="124.0" text="Email" />
+                        <TableColumn fx:id="colEmpUsername" prefWidth="118.0" text="Username" />
+                        <TableColumn fx:id="colEmpName" prefWidth="138.0" text="Name" />
+                        <TableColumn fx:id="colEmpSurname" prefWidth="109.00003051757812" text="Surname" />
+                        <TableColumn fx:id="colEmpPhone" prefWidth="127.0" text="Phone Number" />
+                        <TableColumn fx:id="colEmpEmail" prefWidth="122.0" text="Email" />
                      </columns>
                   </TableView>
                </children>
