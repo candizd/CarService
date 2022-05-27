@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -318,6 +319,13 @@
                         <Font size="28.0" />
                      </font>
                   </Label>
+                  <Label layoutX="102.0" layoutY="250.0" text="Old Password:" />
+                  <Label layoutX="102.0" layoutY="300.0" text="New Password:" />
+                  <Label layoutX="102.0" layoutY="200.0" text="Username:" />
+                  <TextField fx:id="change_username" layoutX="285.0" layoutY="196.0" style="-fx-background-color: white;" />
+                  <PasswordField fx:id="change_opassword" layoutX="285.0" layoutY="246.0" style="-fx-background-color: white;" />
+                  <PasswordField fx:id="change_npassword" layoutX="285.0" layoutY="296.0" style="-fx-background-color: white;" />
+                  <Button fx:id="change_button" layoutX="255.0" layoutY="368.0" mnemonicParsing="false" onAction="#changePassword" text="Change" />
                </children>
             </AnchorPane>
          </children>

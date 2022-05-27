@@ -1,5 +1,6 @@
 package com.example.se_project2;
 
+import javafx.scene.control.PasswordField;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -7,12 +8,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -63,6 +66,15 @@ public class AfterLogin  {
     private AnchorPane bills_screen;
     @FXML
     private AnchorPane settings_screen;
+    @FXML
+    private TextField change_username;
+    @FXML
+    private PasswordField change_opassword;
+    @FXML
+    private PasswordField change_npassword;
+    @FXML
+    private Button change_button;
+
 
     @FXML
     private TableColumn<Employee,String> colEmpUsername;
@@ -151,6 +163,73 @@ public class AfterLogin  {
         main_stackpane.getChildren().forEach((scene) -> {
             scene.setVisible(false);
         });
+    }
+
+    @FXML
+    public void changePassword() throws SQLException {
+
+        Connection connection = db.getInstance().getConnection();
+        try {
+            String username,oldPassword,newPassword;
+            username = change_username.getText();
+            oldPassword = change_opassword.getText();
+            newPassword = change_npassword.getText();
+
+            Statement statement = connection.createStatement();
+
+            ResultSet resultSet = statement.executeQuery("select * from employee where username = '" + username + "' and password = '" + oldPassword + "'");
+
+            if (resultSet.next()) {
+                int status = statement.executeUpdate("update employee set password = '" + newPassword +"' where username = '"+ username +"' ");
+                if(status > 0) {
+                    System.out.println("password changed");
+                    change_username.setText("");
+                    change_npassword.setText("");
+                    change_opassword.setText("");
+                }
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        connection.close();
+
+    }
+
+    @FXML
+    private void initialize() throws Exception {
+        colEmpUsername.setCellValueFactory(cellData -> cellData.getValue().usernameProperty());
+        colEmpName.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+        colEmpSurname.setCellValueFactory(cellData -> cellData.getValue().surnameProperty());
+        colEmpPhone.setCellValueFactory(cellData -> cellData.getValue().telefonnummerProperty());
+        colEmpEmail.setCellValueFactory(cellData -> cellData.getValue().emailProperty());
+        ObservableList<Employee> empList = db.getAllEmployeeRecords();
+        populateEmployeeTable(empList);
+
+        colCustomerName.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+        colCustomerSurname.setCellValueFactory(cellData -> cellData.getValue().surnameProperty());
+        colCustomerEmail.setCellValueFactory(cellData -> cellData.getValue().emailProperty());
+        colCustomerPhone.setCellValueFactory(cellData -> cellData.getValue().phoneProperty());
+        colCustomerSection.setCellValueFactory(cellData -> cellData.getValue().sectionProperty());
+        colCustomerAddress.setCellValueFactory(cellData -> cellData.getValue().addressProperty());
+        ObservableList<Customer> customers = db.getAllCustomerRecords();
+        populateCustomerTable(customers);
+
+        colCarID.setCellValueFactory(cellData -> cellData.getValue().IDProperty().asObject());
+        colCarBrand.setCellValueFactory(cellData -> cellData.getValue().brandProperty());
+        colCarModel.setCellValueFactory(cellData -> cellData.getValue().modelProperty());
+        colCarHorsepower.setCellValueFactory(cellData -> cellData.getValue().horsepowerProperty());
+        colCarSection.setCellValueFactory(cellData -> cellData.getValue().sectionProperty());
+        colCarPrice.setCellValueFactory(cellData -> cellData.getValue().priceProperty());
+        ObservableList<Cars> cars = db.getAllCarRecords();
+        populateCarTable(cars);
+
+        colBillID.setCellValueFactory(cellData -> cellData.getValue().bill_IDProperty().asObject());
+        colBillDate.setCellValueFactory(cellData -> cellData.getValue().dateProperty());
+        colBillPrice.setCellValueFactory(cellData -> cellData.getValue().priceProperty());
+        ObservableList<Bill> bills = db.getAllBillRecords();
+        populateBillTable(bills);
+
     }
 
     public void popUpEAdd(ActionEvent event) throws IOException {
@@ -250,42 +329,6 @@ public class AfterLogin  {
         }
     }
 
-
-    @FXML
-    private void initialize() throws Exception {
-        colEmpUsername.setCellValueFactory(cellData -> cellData.getValue().usernameProperty());
-        colEmpName.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
-        colEmpSurname.setCellValueFactory(cellData -> cellData.getValue().surnameProperty());
-        colEmpPhone.setCellValueFactory(cellData -> cellData.getValue().telefonnummerProperty());
-        colEmpEmail.setCellValueFactory(cellData -> cellData.getValue().emailProperty());
-        ObservableList<Employee> empList = db.getAllEmployeeRecords();
-        populateEmployeeTable(empList);
-
-        colCustomerName.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
-        colCustomerSurname.setCellValueFactory(cellData -> cellData.getValue().surnameProperty());
-        colCustomerEmail.setCellValueFactory(cellData -> cellData.getValue().emailProperty());
-        colCustomerPhone.setCellValueFactory(cellData -> cellData.getValue().phoneProperty());
-        colCustomerSection.setCellValueFactory(cellData -> cellData.getValue().sectionProperty());
-        colCustomerAddress.setCellValueFactory(cellData -> cellData.getValue().addressProperty());
-        ObservableList<Customer> customers = db.getAllCustomerRecords();
-        populateCustomerTable(customers);
-
-        colCarID.setCellValueFactory(cellData -> cellData.getValue().IDProperty().asObject());
-        colCarBrand.setCellValueFactory(cellData -> cellData.getValue().brandProperty());
-        colCarModel.setCellValueFactory(cellData -> cellData.getValue().modelProperty());
-        colCarHorsepower.setCellValueFactory(cellData -> cellData.getValue().horsepowerProperty());
-        colCarSection.setCellValueFactory(cellData -> cellData.getValue().sectionProperty());
-        colCarPrice.setCellValueFactory(cellData -> cellData.getValue().priceProperty());
-        ObservableList<Cars> cars = db.getAllCarRecords();
-        populateCarTable(cars);
-
-        colBillID.setCellValueFactory(cellData -> cellData.getValue().bill_IDProperty().asObject());
-        colBillDate.setCellValueFactory(cellData -> cellData.getValue().dateProperty());
-        colBillPrice.setCellValueFactory(cellData -> cellData.getValue().priceProperty());
-        ObservableList<Bill> bills = db.getAllBillRecords();
-        populateBillTable(bills);
-
-    }
 
     private void populateEmployeeTable(ObservableList<Employee> empList) {
         employeeTable.setItems(empList);

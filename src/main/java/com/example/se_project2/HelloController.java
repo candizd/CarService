@@ -43,7 +43,7 @@ public class HelloController {
             Connection connection = db.getInstance().getConnection();
             Statement statement = connection.createStatement();
 
-            ResultSet resultSet = statement.executeQuery("select * from employee where username = '" + username + "' and password = '" + password + "'");
+            ResultSet resultSet = statement.executeQuery("select * from employee where username = '" + username + "' and password = '" + password + "' and department = 'HR' "  );
 
             if (resultSet.next()) {
                 wrongLogIn.setText("Success!");
