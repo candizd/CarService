@@ -144,14 +144,14 @@
                               <Font size="28.0" />
                            </font>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="User">
+                        <Label fx:id="display_username">
                            <HBox.margin>
-                              <Insets left="15.0" top="10.0" />
+                              <Insets left="15.0" top="15.0" />
                            </HBox.margin>
                            <font>
-                              <Font size="22.0" />
+                              <Font name="System Bold" size="14.0" />
                            </font>
-                        </Text>
+                        </Label>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER_LEFT" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: #dfdeed;">

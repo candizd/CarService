@@ -21,6 +21,7 @@ public class SceneController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
     }
     public void logOut(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
