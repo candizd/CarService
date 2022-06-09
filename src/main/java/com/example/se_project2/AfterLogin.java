@@ -1,14 +1,10 @@
 package com.example.se_project2;
 
-import javafx.scene.control.PasswordField;
+import javafx.scene.control.*;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -18,10 +14,13 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Locale;
 
 
 public class AfterLogin  {
 
+    @FXML
+    private Label permission;
     @FXML
     private Button logout;
     @FXML
@@ -130,6 +129,7 @@ public class AfterLogin  {
     private TableView<Bill> billTable;
 
     SceneController sceneController = new SceneController();
+    HelloController ha = new HelloController();
 
     public void userLogOut(ActionEvent event) throws IOException {
         sceneController.logOut(event);
@@ -137,23 +137,29 @@ public class AfterLogin  {
 
     @FXML
     private void menuButtonClicks(ActionEvent event) {
-        hideAllSceneItems();
-        if(event.getSource() == button_employee) {
-            employee_screen.setVisible(true);
+        String Department = ha.getDepartment();
+        if(event.getSource() == button_employee && Department.equals("HR")) {
+                hideAllSceneItems();
+                employee_screen.setVisible(true);
         }
-        if(event.getSource() == button_customer) {
+        if(event.getSource() == button_customer && (Department.equals("HR")  || Department.equals("CUS")))  {
+            hideAllSceneItems();
             customer_screen.setVisible(true);
         }
-        if(event.getSource() == button_cars) {
+        if(event.getSource() == button_cars && (Department.equals("HR")  || Department.equals("CAS"))) {
+            hideAllSceneItems();
             cars_screen.setVisible(true);
         }
-        if(event.getSource() == button_bills) {
+        if(event.getSource() == button_bills && Department.equals("HR")) {
+            hideAllSceneItems();
             bills_screen.setVisible(true);
         }
         if(event.getSource() == button_settings) {
+            hideAllSceneItems();
             settings_screen.setVisible(true);
         }
         if(event.getSource() == main_button) {
+            hideAllSceneItems();
             main_screen.setVisible(true);
         }
     }
@@ -167,7 +173,7 @@ public class AfterLogin  {
 
     @FXML
     public void changePassword() throws SQLException {
-
+        String Username = ha.getUsername();
         Connection connection = db.getInstance().getConnection();
         try {
             String username,oldPassword,newPassword;
@@ -176,7 +182,35 @@ public class AfterLogin  {
             newPassword = change_npassword.getText();
 
             Statement statement = connection.createStatement();
+            ResultSet check = statement.executeQuery("select * from employee where username = '"+ Username +"' and department = 'HR' ");
+            if(check.next())  {
+                ResultSet resultSet = statement.executeQuery("select * from employee where username = '" + username + "' and password = '" + oldPassword + "'");
 
+                if (resultSet.next()) {
+                    int status = statement.executeUpdate("update employee set password = '" + newPassword +"' where username = '"+ username +"' ");
+                    if(status > 0) {
+                        System.out.println("password changed");
+                        change_username.setText("");
+                        change_npassword.setText("");
+                        change_opassword.setText("");
+                        permission.setText("Changed password successfully");
+                    }
+
+                }
+                else {
+                    permission.setText("Wrong old password");
+                    change_username.setText("");
+                    change_npassword.setText("");
+                    change_opassword.setText("");
+                }
+            }
+            else {
+                permission.setText("No permission");
+                change_username.setText("");
+                change_npassword.setText("");
+                change_opassword.setText("");
+            }
+            /*
             ResultSet resultSet = statement.executeQuery("select * from employee where username = '" + username + "' and password = '" + oldPassword + "'");
 
             if (resultSet.next()) {
@@ -186,9 +220,14 @@ public class AfterLogin  {
                     change_username.setText("");
                     change_npassword.setText("");
                     change_opassword.setText("");
+                    permission.setText("Changed password successfully");
                 }
 
             }
+            else {
+                permission.setText("Wrong old password");
+            }
+             */
         } catch (SQLException e) {
             e.printStackTrace();
         }

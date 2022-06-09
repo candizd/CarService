@@ -326,6 +326,11 @@
                   <PasswordField fx:id="change_opassword" layoutX="285.0" layoutY="246.0" style="-fx-background-color: white;" />
                   <PasswordField fx:id="change_npassword" layoutX="285.0" layoutY="296.0" style="-fx-background-color: white;" />
                   <Button fx:id="change_button" layoutX="255.0" layoutY="368.0" mnemonicParsing="false" onAction="#changePassword" text="Change" />
+                  <Label fx:id="permission" layoutX="227.0" layoutY="459.0" style="-fx-text-fill: red;">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
          </children>
