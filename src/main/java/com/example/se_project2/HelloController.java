@@ -46,9 +46,8 @@ public class HelloController {
             Connection connection = db.getInstance().getConnection();
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("select * from employee where username = '" + username + "' and password = '" + password + "'");
-            //ResultSet resultSet = statement.executeQuery("select * from employee where username = '" + username + "' and password = '" + password + "' and department = 'HR' "  );
-            Department = resultSet.getString("department");
             if (resultSet.next()) {
+                Department = resultSet.getString("department");
                 wrongLogIn.setText("Success!");
                 sceneController.switchToAfter(event);
 

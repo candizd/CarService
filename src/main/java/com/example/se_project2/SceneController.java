@@ -35,7 +35,7 @@ public class SceneController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxml));
         Parent root = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
-        stage.setTitle("JavaFX");
+        stage.setTitle(fxml);
         stage.setScene(new Scene(root));
         stage.show();
     }

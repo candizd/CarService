@@ -139,7 +139,7 @@ public class AfterLogin  {
     }
 
     @FXML
-    private void menuButtonClicks(ActionEvent event) {
+    private void menuButtonClicks(ActionEvent event) throws IOException {
         String Department = ha.getDepartment();
         if(event.getSource() == button_employee && Department.equals("HR")) {
                 hideAllSceneItems();
@@ -372,7 +372,6 @@ public class AfterLogin  {
             connection.close();
         }
     }
-
 
     private void populateEmployeeTable(ObservableList<Employee> empList) {
         employeeTable.setItems(empList);
