@@ -71,6 +71,7 @@ public class WindowController {
     @FXML
     void addEmployee(ActionEvent event) throws SQLException {
         Connection connection = db.getInstance().getConnection();
+        AfterLogin al = new AfterLogin();
         Stage stage = (Stage) esave_button.getScene().getWindow();
         try {
             String username = add_username.getText();

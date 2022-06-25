@@ -219,11 +219,12 @@
                   </Button>
                   <TableView fx:id="employeeTable" layoutY="123.0" prefHeight="477.0" prefWidth="600.0" style="-fx-background-color: dcdcdc;">
                      <columns>
-                        <TableColumn fx:id="colEmpUsername" prefWidth="118.0" text="Username" />
-                        <TableColumn fx:id="colEmpName" prefWidth="138.0" text="Name" />
-                        <TableColumn fx:id="colEmpSurname" prefWidth="109.00003051757812" text="Surname" />
-                        <TableColumn fx:id="colEmpPhone" prefWidth="127.0" text="Phone Number" />
-                        <TableColumn fx:id="colEmpEmail" prefWidth="122.0" text="Email" />
+                        <TableColumn fx:id="colEmpUsername" prefWidth="96.0" text="Username" />
+                        <TableColumn fx:id="colEmpName" prefWidth="96.0" text="Name" />
+                        <TableColumn fx:id="colEmpSurname" prefWidth="102.00003051757812" text="Surname" />
+                        <TableColumn fx:id="colEmpPhone" prefWidth="117.0" text="Phone Number" />
+                        <TableColumn fx:id="colEmpEmail" prefWidth="107.0" text="Email" />
+                        <TableColumn fx:id="colEmpDepartment" text="Department" />
                      </columns>
                   </TableView>
                </children>

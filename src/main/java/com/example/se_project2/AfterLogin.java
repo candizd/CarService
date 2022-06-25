@@ -89,6 +89,8 @@ public class AfterLogin  {
     @FXML
     private TableColumn<Employee, String> colEmpEmail;
     @FXML
+    private TableColumn<Employee,String> colEmpDepartment;
+    @FXML
     private TableView<Employee> employeeTable;
 
     @FXML
@@ -139,8 +141,9 @@ public class AfterLogin  {
     }
 
     @FXML
-    private void menuButtonClicks(ActionEvent event) throws IOException {
+    private void menuButtonClicks(ActionEvent event) throws Exception {
         String Department = ha.getDepartment();
+        initialize();
         if(event.getSource() == button_employee && Department.equals("HR")) {
                 hideAllSceneItems();
                 employee_screen.setVisible(true);
@@ -245,6 +248,7 @@ public class AfterLogin  {
         colEmpSurname.setCellValueFactory(cellData -> cellData.getValue().surnameProperty());
         colEmpPhone.setCellValueFactory(cellData -> cellData.getValue().telefonnummerProperty());
         colEmpEmail.setCellValueFactory(cellData -> cellData.getValue().emailProperty());
+        colEmpDepartment.setCellValueFactory(cellData -> cellData.getValue().departmentProperty());
         ObservableList<Employee> empList = db.getAllEmployeeRecords();
         populateEmployeeTable(empList);
 

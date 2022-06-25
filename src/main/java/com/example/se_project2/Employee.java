@@ -11,6 +11,7 @@ public class Employee  {
     private StringProperty surname;
     private StringProperty telefonnummer;
     private StringProperty email;
+    private StringProperty department;
 
 
     public Employee() {
@@ -19,6 +20,7 @@ public class Employee  {
         this.telefonnummer = new SimpleStringProperty();
         this.email = new SimpleStringProperty();
         this.username = new SimpleStringProperty();
+        this.department = new SimpleStringProperty();
     }
 
     public String getUsername() {
@@ -79,5 +81,17 @@ public class Employee  {
 
     public void setSurname(String surname) {
         this.surname.set(surname);
+    }
+
+    public String getDepartment() {
+        return department.get();
+    }
+
+    public StringProperty departmentProperty() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department.set(department);
     }
 }

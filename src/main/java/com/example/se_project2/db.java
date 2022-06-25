@@ -47,7 +47,7 @@ public class db {
 
     public static ObservableList<Employee> getAllEmployeeRecords() throws ClassNotFoundException, SQLException {
         Connection connection = db.getInstance().getConnection();
-        String sql = "select username,name,surname,telephone_number,email FROM employee";
+        String sql = "select username,name,surname,telephone_number,email,department FROM employee";
 
         try {
             Statement s = connection.createStatement();
@@ -73,6 +73,7 @@ public class db {
                 emp.setSurname(rsSet.getString("surname"));
                 emp.setTelefonnummer(rsSet.getString("telephone_number"));
                 emp.setEmail(rsSet.getString("email"));
+                emp.setDepartment(rsSet.getString("department"));
                 emplist.add(emp);
             }
             return emplist;
